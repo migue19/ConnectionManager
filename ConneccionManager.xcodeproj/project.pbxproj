@@ -10,6 +10,7 @@
 		1D7C9DCC252A4A560006111C /* ConneccionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7C9DC2252A4A550006111C /* ConneccionManager.framework */; };
 		1D7C9DD1252A4A560006111C /* ConneccionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C9DD0252A4A560006111C /* ConneccionManagerTests.swift */; };
 		1D7C9DD3252A4A560006111C /* ConneccionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7C9DC5252A4A550006111C /* ConneccionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D7C9DDF252A4C200006111C /* ConneccionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7C9DDE252A4C200006111C /* ConneccionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		1D7C9DCB252A4A560006111C /* ConneccionManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConneccionManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7C9DD0252A4A560006111C /* ConneccionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConneccionManagerTests.swift; sourceTree = "<group>"; };
 		1D7C9DD2252A4A560006111C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D7C9DDE252A4C200006111C /* ConneccionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConneccionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7C9DC5252A4A550006111C /* ConneccionManager.h */,
+				1D7C9DDE252A4C200006111C /* ConneccionManager.swift */,
 				1D7C9DC6252A4A550006111C /* Info.plist */,
 			);
 			path = ConneccionManager;
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					1D7C9DC1252A4A550006111C = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					1D7C9DCA252A4A560006111C = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7C9DDF252A4C200006111C /* ConneccionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		1D7C9DD7252A4A560006111C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nut.ConneccionManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		1D7C9DD8252A4A560006111C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
@@ -389,6 +397,7 @@
 		1D7C9DDA252A4A560006111C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = ConneccionManagerTests/Info.plist;
@@ -407,6 +416,7 @@
 		1D7C9DDB252A4A560006111C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = ConneccionManagerTests/Info.plist;
