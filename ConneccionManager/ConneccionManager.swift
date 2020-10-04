@@ -34,22 +34,11 @@ class ConneccionManager {
         }
     }
     func conneccionRequest(url: String, method: String, headers: [String: String], parameters: [String: Any]?, closure: @escaping (Data?,String?) -> Void) {
-        let configuration = getSessionConfiguration()
-        let session = URLSession(configuration: configuration)
-        guard let url = URL(string: url) else {
+        guard  let request = buildRequest(url: url, method: method, headers: headers, parameters: parameters) else {
             return
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = method
-        request.allHTTPHeaderFields = headers
-        if let param = parameters {
-            do{
-                let httpBody = try JSONSerialization.data(withJSONObject: param, options: .prettyPrinted)
-                request.httpBody = httpBody
-            }catch {
-                print(error)
-            }
-        }
+        let configuration = getSessionConfiguration()
+        let session = URLSession(configuration: configuration)
         session.dataTask(with: request) { (data, response, error) in
             if(error != nil){
                 closure(nil,"Error de conexion")
@@ -77,5 +66,22 @@ class ConneccionManager {
                 break
             }
         }.resume()
+    }
+    func buildRequest(url:  String, method: String, headers: [String: String], parameters: [String: Any]?) -> URLRequest? {
+        guard let url = URL(string: url) else {
+            return nil
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.allHTTPHeaderFields = headers
+        if let param = parameters {
+            do{
+                let httpBody = try JSONSerialization.data(withJSONObject: param, options: .prettyPrinted)
+                request.httpBody = httpBody
+            }catch {
+                print(error)
+            }
+        }
+        return request
     }
 }
